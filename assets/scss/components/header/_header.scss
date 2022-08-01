@@ -1,3 +1,6 @@
+@use "../../presets/index" as *;
+@use "../../mixins/index" as *;
+
 .header {
   position: relative;
 
@@ -14,4 +17,3 @@
   background-position: center;
   background-size: cover;
 }
-

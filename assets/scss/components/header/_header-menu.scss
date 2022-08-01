@@ -1,9 +1,12 @@
-.header-menu {   
-    position: absolute;
-    z-index: 2;
-    top: 0;
-    right: 0;
-    left: 0;
+@use "../../presets/index" as *;
+@use "../../mixins/index" as *;
+
+.header-menu {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  left: 0;
 
   .header-menu__container {
     display: flex;
@@ -12,5 +15,4 @@
     @extend %container;
     gap: $gap;
   }
-
 }
