@@ -1,0 +1,41 @@
+.header-content {
+  position: relative;
+  z-index: 1;
+  top: 0;
+
+  .header-content__container {
+    @extend %container;
+  }
+
+  // .header-content__container {
+  //   max-width: 1340px;
+  //   margin: 0 auto;
+  //   padding-right: $gap;
+  //   padding-left: $gap;
+  // }
+
+  // %container {
+  //   max-width: $ul;
+  //   margin: 0 auto;
+  //   padding-right: $gap;
+  //   padding-left: $gap;
+  // }
+  
+
+  .header-content__title {
+    margin: 0 0 53px;
+
+    text-align: center;
+  }
+
+  .header-content__link {
+    display: flex;
+    justify-content: center;
+
+    gap: $gap;
+  }
+}
+
+
+
+
