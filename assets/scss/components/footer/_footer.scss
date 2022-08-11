@@ -1,0 +1,66 @@
+@use "../../presets/index" as *;
+@use "../../mixins/index" as *;
+
+.footer {
+    padding: 50px 20px 70px;
+    text-align: center;
+    background-color: $color-primary;
+
+    .footer__container {
+        @extend %container;
+    }
+
+    .footer__socials {
+        position: relative;
+        display: grid;
+        justify-content: center;
+        margin-bottom: $gap-x2;
+        grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
+        a {
+            display: block;
+
+            padding: $gap-sm;
+      
+            transition: color 0.5s;
+      
+            &:hover,
+            &:focus {
+              color: $color-accent;
+            }
+        }
+
+        .fab {
+            font-size: 36px
+        }
+
+        &::after {
+            position: absolute;
+            bottom: -$gap;
+            left: calc(50% - 75px / 2);
+            display: flex;
+            justify-content: center;
+      
+            width: 75px;
+            height: 2px;
+      
+            content: "";
+      
+            background-color: rgba($color-light, 0.1);
+        }
+    }
+
+    .footer__copy{
+        span:nth-of-type(1) {
+            margin-right: -0.5em;
+            letter-spacing: 0.33em;
+            color: $color-gray;
+            font-weight: 100;
+        }
+
+        span:nth-of-type(2) {
+            letter-spacing: 0.05em;
+            color: $color-gray-light;
+            font-weight: 700;
+        }
+    }
+}

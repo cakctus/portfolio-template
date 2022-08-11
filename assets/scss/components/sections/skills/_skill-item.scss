@@ -9,13 +9,22 @@
   background-color: $color-primary;
 
   &__title {
-    position: relative;
     z-index: 1;
 
     margin: 0;
 
+    letter-spacing: 0.1em;
+
     @include abs-position;
+    @include md-min {
+      font-size: 1.25rem;
+    }
+    @include md {
+      font-size: 1.125rem;
+    }
   }
+
+ 
 
   &__link {
     display: flex;
@@ -31,8 +40,8 @@
   &__image {
     transition: transform 0.5s;
 
-    background-repeat: no-repeat;
-    background-position: center;
+    // background-repeat: no-repeat;
+    background-position: 50% 50%;
     background-size: cover;
 
     @include abs-position;

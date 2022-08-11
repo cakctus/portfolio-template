@@ -11,9 +11,20 @@
   }
 
   .header-content__title {
-    margin: 0 0 53px;
-
     text-align: center;
+
+    @include lg-min {
+      margin: 0 0 53px;
+    }
+
+    @include lg-md {
+      margin: 0 0 43px;
+    }
+
+    @include md {
+      margin: 0 0 33px;
+    }
+
   }
 
   .header-content__link {
@@ -21,5 +32,10 @@
     justify-content: center;
 
     gap: $gap;
+
+    @include sm {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 }

@@ -74,6 +74,6 @@ function watchDevFiles() {
 
 task("comb", series(comb))
 task("scss", series(scss))
-task("dev", series(scssDev))
+// task("dev", series(scssDev))
 task("watch", watchFiles)
 task("dev", watchDevFiles)

@@ -4,26 +4,103 @@
 .header-navbar {
   flex-grow: 1;
 
-  &__btn {
-    display: none;
+  .header-navbar__burger {
+    @include md-min {
+      display: none;
+    }
+    width: 30px;
+    height: 22.5px;
+    position: relative;
+    margin: 25px 0 25px auto;
+    transform: rotate(0deg);
+    transition: .5s ease-in-out;
+    cursor: pointer;
+
+    span {
+      display: block;
+      position: absolute;
+      height: 3px;
+      width: 100%;
+      background: $color-light;
+      border-radius: 3px;
+      opacity: 1;
+      left: 0;
+      transform: rotate(0deg);
+      transition: .25s ease-in-out;
+
+      &:nth-child(1) {
+        top: 0px;
+        transform-origin: left center;
+      }
+      
+      &:nth-child(2) {
+        top: 9px;
+        transform-origin: left center;
+      }
+      
+      &:nth-child(3) {
+        top: 18px;
+        transform-origin: left center;
+      }
+    }
+
+
+    &--open span {
+      &:nth-child(1) {
+        transform: rotate(45deg);
+        top: 0;
+        left: 8px;
+      }
+
+      &:nth-child(2) {
+        width: 0%;
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        transform: rotate(-45deg);
+        top: 19.5px;
+        left: 8px;
+      }
+    }
   }
 
   &__list {
-    display: grid;
-    justify-content: end;
-
-    grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
-    @include unlist(0 -20px 0 0);
+    @include md-min {
+      display: grid;
+      justify-content: end;
+      grid-template-columns: repeat(auto-fit, minmax(50px, max-content));   
+      @include unlist(0 -20px 0 0);
+    }
+    @include md {
+      display: none;
+      position: absolute;
+      right: 20px;
+      top: 100%;
+      text-align: right;
+      background-color: rgba($color-gray-dark, 0.75);
+      @include box-shadow;
+    }
+    @include unlist();
   }
 
   &__item {
     margin: $gap $gap-sm;
+    @include md {
+      margin: $gap $gap-sm;
+    }
   }
 
   &__link {
     display: block;
 
-    padding: $gap $gap-sm;
+    @include md-min {
+      padding: $gap $gap-sm;
+    }
+
+    @include md {
+      padding: $gap-sm $gap;
+    }
 
     transition: color 0.5s;
     letter-spacing: 0.09em;
