@@ -5,6 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
   padding: 0.5em 1em;
 
   transition: background-color 0.5s;
@@ -23,34 +24,32 @@
     @include lg-min {
       min-width: 250px;
       height: 60px;
+
       font-size: 1.125rem;
     }
-
     @include lg-md {
       min-width: 200px;
       height: 50px;
     }
-
     @include md {
       min-width: 170px;
       height: 40px;
     }
-
   }
 
   &--primary {
     height: 60px;
+
+    border: 2px solid $color-primary;
+    background-color: rgba($color-primary, 0.8);
+
     font-size: 1.125rem;
 
     @include sm-min {
       width: 350px;
     }
-
     @include sm {
       width: 100%;
     }
-
-    border: 2px solid $color-primary;
-    background-color: rgba($color-primary, 0.8);
   }
 }

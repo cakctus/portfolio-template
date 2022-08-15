@@ -2,106 +2,100 @@
 @use "../../mixins/index" as *;
 
 .about {
-    letter-spacing: 0.055em;
-    background-color: #e5e5e5;
+  letter-spacing: 0.055em;
 
+  background-color: #e5e5e5;
+
+  @include lg-min {
+    padding-top: $gap-x5;
+    padding-bottom: $gap-x5;
+  }
+  @include lg-md {
+    padding-top: $gap-x4;
+    padding-bottom: $gap-x4;
+  }
+  @include md {
+    padding-top: $gap-x3;
+    padding-bottom: $gap-x3;
+  }
+
+  h2 {
+    margin-top: 0;
+  }
+
+  .about__container {
+    display: grid;
+
+    @extend %container;
     @include lg-min {
-        padding-top: $gap-x5;
-        padding-bottom: $gap-x5;
+      gap: $gap-x5;
+      grid-template-columns: 1fr 271px;
+    }
+    @include lg-md {
+      gap: $gap-x2;
+      grid-template-columns: 1fr 271px;
+    }
+    @include md-sm {
+      gap: $gap;
+      grid-template-columns: 1fr 236px;
+    }
+    @include sm {
+      gap: $gap;
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .about__content {
+    p {
+      @include lg-min {
+        font-size: 1.125rem;
       }
-      @include lg-md {
-        padding-top: $gap-x4;
-        padding-bottom: $gap-x4;
-      }
-      @include md {
-        padding-top: $gap-x3;
-        padding-bottom: $gap-x3;
-      }
-    
-      h2 {
-        margin-top: 0;
-      }
 
-    .about__container {
-        display: grid;
+      &:first-of-type {
+        position: relative;
 
-        @extend %container;
+        margin-top: -5px;
 
-        @include lg-min {
-            gap: $gap-x5;
-            grid-template-columns: 1fr 271px;
-        }
+        &::after {
+          position: absolute;
+          top: 0;
 
-        @include lg-md {
-            gap: $gap-x2;
-            grid-template-columns: 1fr 271px;
-        }
+          width: 2px;
+          height: 200px;
 
-        @include md-sm {
-            gap: $gap;
-            grid-template-columns: 1fr 236px;
-        }
+          content: "";
 
-        @include sm {
-            gap: $gap;
-            grid-template-columns: 1fr;
+          background-color: rgba($color-gray, 0.1);
+
+          @include lg-min {
+            right: -$gap * 2.5;
           }
-    }
-
-    
-
-    .about__content {
-        p {
-            @include lg-min {
-                font-size: 1.125rem;
-            }
-
-            &:first-of-type {
-                position: relative;
-        
-                margin-top: -5px;
-        
-                &::after {
-                  position: absolute;
-                  top: 0;
-        
-                  width: 2px;
-                  height: 200px;
-        
-                  content: "";
-        
-                  background-color: rgba($color-gray, 0.1);
-        
-                  @include lg-min {
-                    right: -$gap * 2.5;
-                  }
-                  @include lg-md {
-                    right: -$gap;
-                  }
-                  @include md-sm {
-                    right: -$gap-sm;
-                  }
-                  @include sm {
-                    display: none;
-                  }
-                }
-              }
-              &:last-of-type {
-                margin: 0;
-              }
+          @include lg-md {
+            right: -$gap;
+          }
+          @include md-sm {
+            right: -$gap-sm;
+          }
+          @include sm {
+            display: none;
+          }
         }
+      }
+      &:last-of-type {
+        margin: 0;
+      }
     }
+  }
 
-    .about__image {
-        display: grid;
-        justify-content: center;
-        align-items: center;
+  .about__image {
+    display: grid;
+    align-items: center;
+    justify-content: center;
 
-        img {
-            // margin-top: -19px;
-            max-width: 100%;
-            max-height: 480px;
-        }
+    img {
+      // margin-top: -19px;
+      max-width: 100%;
+      max-height: 480px;
     }
-
+  }
 }
